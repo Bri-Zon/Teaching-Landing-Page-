@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Business English, Tailored to You</title>
+<meta name="description" content="One-on-one Business English classes that fit your goals and your schedule, from beginner to advanced.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700;12..96,800&family=Figtree:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#FFFCF6;
+    --ink:#1F3D33;
+    --ink-soft:#3E5A50;
+    --sage:#E7EEE4;
+    --sage-deep:#D3E0CE;
+    --honey:#F0A63C;
+    --honey-soft:#FBDFB6;
+    --white:#FFFFFF;
+    --radius:18px;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  @media (prefers-reduced-motion: reduce){
+    html{scroll-behavior:auto;}
+    *,*::before,*::after{animation:none!important;transition:none!important;}
+  }
+  body{
+    font-family:'Figtree',sans-serif;
+    background:var(--paper);
+    color:var(--ink);
+    line-height:1.65;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3{font-family:'Bricolage Grotesque',sans-serif;line-height:1.12;font-weight:700;}
+  img{max-width:100%;display:block;}
+  a{color:inherit;}
+  .wrap{max-width:1060px;margin:0 auto;padding:0 24px;}
+  :focus-visible{outline:3px solid var(--honey);outline-offset:3px;border-radius:4px;}
+
+  .nav{
+    position:sticky;top:0;z-index:50;
+    background:rgba(255,252,246,.92);
+    backdrop-filter:blur(8px);
+    border-bottom:1px solid rgba(31,61,51,.08);
+  }
+  .nav-inner{display:flex;align-items:center;justify-content:space-between;padding:14px 24px;max-width:1060px;margin:0 auto;}
+  .brand{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:1.15rem;text-decoration:none;display:flex;align-items:center;gap:8px;}
+  .brand .dot{width:10px;height:10px;border-radius:50%;background:var(--honey);display:inline-block;}
+  .nav-links{display:flex;gap:26px;align-items:center;}
+  .nav-links a{font-size:.92rem;font-weight:600;text-decoration:none;color:var(--ink-soft);}
+  .nav-links a:hover{color:var(--ink);}
+  @media(max-width:720px){.nav-links a:not(.btn){display:none;}}
+
+  .btn{
+    display:inline-block;
+    font-family:'Figtree',sans-serif;
+    font-weight:700;font-size:1rem;
+    padding:14px 28px;border-radius:999px;
+    text-decoration:none;border:none;cursor:pointer;
+    transition:transform .18s ease, box-shadow .18s ease, background .18s ease;
+  }
+  .btn-primary{background:var(--ink);color:var(--white);}
+  .btn-primary:hover{background:#2A4F42;transform:translateY(-2px);box-shadow:0 8px 20px rgba(31,61,51,.22);}
+  .btn-honey{background:var(--honey);color:var(--ink);}
+  .btn-honey:hover{background:#EFA13A;transform:translateY(-2px);box-shadow:0 8px 20px rgba(240,166,60,.35);}
+
+  .hero{padding:76px 0 90px;position:relative;overflow:hidden;}
+  .hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:48px;align-items:center;}
+  .hero-copy{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    text-align:center;
+    max-width:600px;
+  }
+  .hero h1{font-size:clamp(2.4rem,5.2vw,3.9rem);font-weight:800;letter-spacing:-.02em;margin-bottom:22px;}
+  .hl{position:relative;display:inline-block;white-space:nowrap;}
+  .hl svg{position:absolute;left:-4%;bottom:-.14em;width:108%;height:.42em;z-index:-1;overflow:visible;}
+  .hl path{fill:var(--honey-soft);}
+  .hl.h2b path{fill:var(--sage-deep);}
+  .hero p.sub{font-size:1.15rem;color:var(--ink-soft);max-width:32em;margin-bottom:34px;}
+  .hero-facts{display:flex;gap:28px;margin-top:38px;flex-wrap:wrap;}
+  .fact strong{font-family:'Bricolage Grotesque',sans-serif;font-size:1.5rem;font-weight:800;display:block;}
+  .fact span{font-size:.88rem;color:var(--ink-soft);}
+
+  .bubble-stage{position:relative;min-height:360px;}
+  .bubble{
+    position:absolute;
+    background:var(--white);
+    border:1.5px solid rgba(31,61,51,.1);
+    border-radius:16px;
+    padding:14px 18px;
+    box-shadow:0 10px 24px rgba(31,61,51,.08);
+    font-size:.92rem;
+    max-width:250px;
+  }
+  .bubble .ph{display:block;font-size:.72rem;font-weight:700;letter-spacing:.04em;color:var(--honey);margin-bottom:3px;text-transform:uppercase;}
+  .bubble .en{font-weight:600;}
+  .bubble .alt{font-size:.82rem;color:var(--ink-soft);font-style:italic;}
+  .b1{top:0;left:0;transform:rotate(-2.5deg);}
+  .b2{top:86px;right:6px;transform:rotate(2deg);}
+  .b3{top:196px;left:30px;transform:rotate(-1.2deg);}
+  .b4{top:288px;right:0;transform:rotate(1.6deg);}
+  @media(max-width:860px){
+    .bubble{width:90%;margin:0 auto;}
+    .bubble{max-width:230px;padding:11px 15px;}
+    .b1{left:0;} .b2{right:0;} .b3{left:6px;} .b4{right:4px;top:auto;bottom:0;}
+  }
+  @media(max-width:480px){
+    .bubble{max-width:200px;font-size:.85rem;}
+    .b3{top:190px;}
+  }
+
+  section{padding:84px 0;}
+  .sec-head{max-width:38em;margin-bottom:44px;}
+  .sec-head h2{font-size:clamp(1.7rem,3.4vw,2.4rem);font-weight:800;letter-spacing:-.015em;margin-bottom:14px;}
+  .sec-head p{color:var(--ink-soft);font-size:1.06rem;}
+
+  .about-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:56px;align-items:start;}
+  @media(max-width:860px){.about-grid{grid-template-columns:1fr;gap:36px;}}
+  .about-copy p{margin-bottom:18px;color:var(--ink-soft);font-size:1.05rem;}
+  .who{background:var(--sage);border-radius:var(--radius);padding:32px 30px;}
+  .who h3{font-size:1.25rem;margin-bottom:18px;}
+  .who ul{list-style:none;}
+  .who li{
+    padding:12px 0 12px 34px;position:relative;
+    border-bottom:1px solid rgba(31,61,51,.1);
+    font-weight:500;font-size:.98rem;
+  }
+  .who li:last-child{border-bottom:none;}
+  .who li::before{
+    content:"";position:absolute;left:2px;top:16px;
+    width:16px;height:16px;border-radius:50%;
+    background:var(--honey);
+    -webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M9 16.2 4.8 12l-1.4 1.4l-1.4 1.4L9 19 21 7l-1.4-1.4z'/%3E%3C/svg%3E") center/contain no-repeat;
+    mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M9 16.2 4.8 12l-1.4 1.4l-1.4 1.4L9 19 21 7l-1.4-1.4z'/%3E%3C/svg%3E") center/contain no-repeat;
+  }
+
+  .sched{background:var(--ink);color:var(--white);}
+  .sched .sec-head p{color:#C8D6CF;}
+  .sched-inner{display:grid;grid-template-columns:auto 1fr;gap:48px;align-items:center;max-width:38em;margin:0 auto;}
+  @media(max-width:680px){.sched-inner{grid-template-columns:1fr;gap:28px;text-align:left;}}
+  .sched-icon{
+    width:86px;height:86px;border-radius:24px;
+    background:var(--honey);
+    display:flex;align-items:center;justify-content:center;
+  }
+  .sched-icon svg{width:44px;height:44px;stroke:var(--ink);}
+  .sched-inner p{font-size:1.14rem;color:#E4EDE8;}
+  .sched-inner p strong{color:var(--white);}
+
+  .teachers-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:40px;}
+  @media(max-width:860px){.teachers-grid{grid-template-columns:1fr;gap:36px;}}
+  .teacher-card{
+    background:var(--white);
+    border-radius:var(--radius);
+    padding:36px;
+    box-shadow:0 6px 18px rgba(31,61,51,.06);
+    display:flex;flex-direction:column;gap:20px;
+  }
+  .teacher-card .photo-wrap{
+    width:100%;aspect-ratio:4/4.6;border-radius:var(--radius);overflow:hidden;
+    background:var(--sage);display:flex;align-items:center;justify-content:center;
+  }
+  .teacher-card .photo-wrap img{width:100%;height:100%;object-fit:cover;display:block;}
+  .teacher-card h2{font-size:clamp(1.7rem,3.4vw,2.3rem);font-weight:800;margin-bottom:8px;}
+  .teacher-card .role{color:var(--honey);font-weight:700;font-size:.95rem;margin-bottom:20px;display:block;}
+  .teacher-card p{color:var(--ink-soft);font-size:1.05rem;margin-bottom:16px;}
+  .teacher-card p:last-child{margin-bottom:0;}
+
+  .quotes{background:var(--sage);}
+  .quote-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;}
+  @media(max-width:860px){.quote-grid{grid-template-columns:1fr;}}
+  .quote{
+    background:var(--white);
+    border-radius:var(--radius);
+    padding:28px 26px;
+    box-shadow:0 6px 18px rgba(31,61,51,.06);
+    display:flex;flex-direction:column;gap:16px;
+  }
+  .photo-wrap{
+    width:52px;height:52px;border-radius:50%;
+    border:2px solid var(--sage-deep);
+    flex-shrink:0;background:var(--sage);
+    display:flex;align-items:center;justify-content:center;
+  }
+  .photo-wrap img{width:100%;height:100%;object-fit:cover;display:block;}
+  .quote-head{display:flex;align-items:center;gap:14px;}
+  .quote .mark{font-family:'Bricolage Grotesque',sans-serif;font-size:2.6rem;line-height:1;color:var(--honey);font-weight:800;height:.6em;}
+  .quote blockquote{font-size:.98rem;color:var(--ink);flex:1;font-style:italic;}
+  .quote cite{font-style:normal;font-size:.86rem;font-weight:700;}
+  .quote cite span{display:block;font-weight:500;color:var(--ink-soft);margin-top:2px;}
+
+  .cta-sec{padding-bottom:96px;}
+  .cta-card{
+    background:var(--white);
+    border:1.5px solid rgba(31,61,51,.1);
+    border-radius:26px;
+    padding:56px 52px;
+    max-width:760px;margin:0 auto;
+    box-shadow:0 14px 40px rgba(31,61,51,.08);
+  }
+  .cta-card h2{font-size:clamp(1.7rem,3.4vw,2.3rem);font-weight:800;margin-bottom:12px;text-align:center;}
+  .cta-card>p{color:var(--ink-soft);text-align:center;max-width:30em;margin:0 auto 32px;}
+  form{display:grid;gap:18px;}
+  .field label{display:block;font-weight:700;font-size:.88rem;margin-bottom:7px;}
+  .field input,.field select,.field textarea{
+    width:100%;font-family:'Figtree',sans-serif;font-size:1rem;
+    padding:13px 16px;border-radius:12px;
+    border:1.5px solid rgba(31,61,51,.18);
+    background:var(--paper);color:var(--ink);
+  }
+  .field textarea{resize:vertical;min-height:96px;}
+  .field input:focus,.field select:focus,.field textarea:focus{border-color:var(--honey);outline:none;}
+  .form-note{font-size:.82rem;color:var(--ink-soft);text-align:center;}
+  .form-status{display:none;text-align:center;font-weight:700;color:#2E7D4F;background:#E4F2E9;padding:14px 18px;border-radius:12px;}
+  .form-status.show{display:block;}
+  .cta-card .btn{width:100%;text-align:center;}
+
+  footer{background:var(--ink);color:#C8D6CF;padding:34px 0;}
+  .foot{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;max-width:1060px;margin:0 auto;padding:0 24px;}
+  .foot .brand{color:var(--white);}
+  .foot small{font-size:.85rem;}
+</style>
+</head>
+<body>
+
+<nav class="nav" aria-label="Main">
+  <div class="nav-inner">
+    <a class="brand" href="#top"><span class="dot" aria-hidden="true"></span>Language Learning Habits</a>
+    <div class="nav-links">
+      <a href="#about">What we do</a>
+      <a href="#teacher">The teachers</a>
+      <a href="#testimonials">Testimonials</a>
+      <a class="btn btn-primary" href="#book" style="padding:10px 22px;font-size:.92rem;">Book a Free Intro Call</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <div class="wrap hero-grid">
+    <div class="hero-copy">
+      <h1>Business English,<br>
+        Tailored to You</h1>
+      <p class="sub">One-on-one classes that fit your goals and your schedule, from beginner to advanced.</p>
+      <a class="btn btn-honey" href="#book">Book a Free Intro Call</a>
+      <div class="hero-facts">
+        <div class="fact"><strong>1:1</strong><span>every class, every time</span></div>
+        <div class="fact"><strong>All levels</strong><span>beginner to advanced</span></div>
+        <div class="fact"><strong>Your hours</strong><span>no fixed timetable</span></div>
+      </div>
+    </div>
+    <div class="bubble-stage" aria-label="Examples of phrases you will practice">
+      <div class="bubble b1">
+        <span class="ph">Meetings</span>
+        <span class="en">"Could we circle back to that?"</span>
+        <span class="alt">…instead of "talk again later"</span>
+      </div>
+      <div class="bubble b2">
+        <span class="ph">Email</span>
+        <span class="en">"Just following up on my note below."</span>
+        <span class="alt">…politely, not pushy</span>
+      </div>
+      <div class="bubble b3">
+        <span class="ph">Negotiating</span>
+        <span class="en">"That's slightly above our budget."</span>
+        <span class="alt">…soft but firm</span>
+      </div>
+      <div class="bubble b4">
+        <span class="ph">Small talk</span>
+        <span class="en">"How did the launch go on your end?"</span>
+        <span class="alt">…open the conversation</span>
+      </div>
+    </div>
+  </div>
+</header>
+
+<section id="about">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>What we do</h2>
+    </div>
+    <div class="about-grid">
+      <div class="about-copy">
+        <p>For <strong>two years</strong>, we have been helping students build real-world English skills through personalized one-on-one sessions.</p>
+        <p>Whether you need English for work, for travel, or to prepare for an English fluency exam, every class is designed around your needs.</p>
+        <p><strong>No generic lessons. No one-size-fits-all.</strong></p>
+      </div>
+      <div class="who">
+        <h3>Who we help</h3>
+        <ul>
+          <li>Professionals who need English at work</li>
+          <li>Travelers who want to communicate with confidence</li>
+          <li>Students preparing for fluency exams</li>
+          <li>Learners at every level, from beginner to advanced</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sched" id="scheduling">
+  <div class="wrap">
+    <div class="sched-inner">
+      <div class="sched-icon" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/>
+        </svg>
+      </div>
+      <div>
+        <div class="sec-head" style="margin-bottom:12px;">
+          <h2 style="color:var(--white);">Flexible scheduling</h2>
+        </div>
+        <p>There are no fixed class times. We adjust to your availability, so <strong>learning fits around your life</strong> — not the other way around.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="teacher">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>Meet the teachers</h2>
+      <p>Real-world experience in every class.</p>
+    </div>
+    <div class="teachers-grid">
+      <div class="teacher-card">
+        <div class="photo-wrap" style="border-radius: var(--radius);">
+          <img src="Emmanuel.jpg.jpeg" alt="Emmanuel">
+        </div>
+        <div>
+          <h2>Emmanuel</h2>
+          <span class="role">Civil Engineer & English Teacher</span>
+          <p>Emmanuel, a civil engineer built his Business English skills in the field, working in technical support and customer service. Those roles taught him how to communicate clearly under pressure, negotiate with confidence, and explain complex technical ideas in simple, easy-to-understand language.</p>
+          <p>He brings that real-world experience to every class, so you can speak with confidence in meetings, negotiations, and everyday professional situations.</p>
+        </div>
+      </div>
+      <div class="teacher-card">
+        <div class="photo-wrap" style="border-radius: var(--radius);">
+          <img src="TeacherPamela.jpg.jpeg" alt="Pamela">
+        </div>
+        <div>
+          <h2>Pamela</h2>
+          <span class="role">Hospitality Management Graduate & Business English Teacher</span>
+          <p>Pamela holds a degree in Hospitality Management and has built her career in the industry across Southeast Asia and America. Years of working with guests, colleagues, and clients from many different nationalities gave her intensive, real-world Business English experience, and she brings that experience to every class.</p>
+          <p>She knows how to communicate clearly and professionally with people from different cultures and backgrounds, so you can speak with confidence in meetings, interviews, and everyday professional situations.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="testimonials">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>Testimonials</h2>
+      <p>Feedback from students and fellow teachers.</p>
+    </div>
+    <div class="quote-grid">
+      <div class="quote">
+        <div class="photo-wrap"><img src="Gustavo.jpg.jpeg" alt="Gustavo Dias"></div>
+        <div class="quote-head"><div class="mark" aria-hidden="true">“</div></div>
+        <blockquote>"He is an excellent professional; he is greatly helping my English language development. He also has a great sense of humor. I highly recommend his work."</blockquote>
+        <cite>Gustavo Dias<sup>Data Engineer, Brazil</sup></cite>
+      </div>
+      <div class="quote">
+        <div class="photo-wrap"><img src="Yarlei.jpg.jpeg" alt="Yarlei Cruz"></div>
+        <div class="quote-head"><div class="mark" aria-hidden="true">“</div></div>
+        <blockquote>"I wanted to feel more confident in job interviews and in conversations with international colleagues and friends. Since starting classes with Emmanuel, I have done around 20 to 30 interviews and often received compliments on my English from international interviewers. His classes encourage me to speak, develop my ideas, and communicate more naturally, which has greatly improved my confidence. I highly recommend him to anyone who wants to improve their speaking skills."</blockquote>
+        <cite>Yarlei Cruz<sup>QA Automation, Brazil</sup></cite>
+      </div>
+      <div class="quote">
+        <div class="photo-wrap"><img src="Andy.jpg.jpeg" alt="Anderson Euripedes da Silva"></div>
+        <div class="quote-head"><div class="mark" aria-hidden="true">“</div></div>
+        <blockquote>"I have had the pleasure of knowing Emmanuel as a committed and passionate teacher. He demonstrates patience, professionalism, and a genuine dedication to his students' development. His teaching approach is engaging, respectful, and focused on creating a positive learning environment. Emmanuel has the ability to connect with students, adapt his methods to their needs, and inspire confidence throughout the learning process. I highly recommend him as a teacher and educator."</blockquote>
+        <cite>Anderson Euripedes da Silva<sup>Psychotherapist and fellow teacher, Brazil</sup></cite>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-sec" id="book">
+  <div class="wrap">
+    <div class="cta-card">
+      <h2>Ready to start?</h2>
+      <p>Tell us your goals and we will build a plan that works for you.</p>
+      <form id="introForm" novalidate>
+        <div class="field">
+          <label for="name">Your name</label>
+          <input type="text" id="name" name="name" required placeholder="e.g. Maria Santos">
+        </div>
+        <div class="field">
+          <label for="email">Email or WhatsApp number</label>
+          <input type="text" id="email" name="contact" required placeholder="e.g. maria@email.com or +1 555 000 1234">
+        </div>
+        <div class="field">
+          <label for="goal">What do you need English for?</label>
+          <select id="goal" name="goal">
+            <option>Work & business</option>
+            <option>Travel</option>
+            <option>Fluency exam preparation</option>
+            <option>General improvement</option>
+            <option>Not sure yet</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="msg">Tell us a little about your goals <span style="font-weight:500;color:var(--ink-soft);">(optional)</span></label>
+          <textarea id="msg" name="message" placeholder="e.g. I'm an engineer and I present to international clients twice a month…"></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Book a Free Intro Call</button>
+        <p class="form-status" id="formStatus" role="status">Thanks! Your note is ready to send — we'll be in touch soon.</p>
+        <p class="form-note">Note for the site owner: this demo form doesn't send yet. Connect it to a free service like Formspree, Netlify Forms, or Google Forms to receive messages.</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="foot">
+    <a class="brand" href="#top"><span class="dot" aria-hidden="true"></span>Language Learning Habits</a>
+    <small>Business English · One-on-one · All levels welcome</small>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('introForm').addEventListener('submit', function(e){
+    e.preventDefault();
+    var name = document.getElementById('name');
+    var contact = document.getElementById('email');
+    if(!name.value.trim() || !contact.value.trim()){
+      (name.value.trim() ? contact : name).focus();
+      return;
+    }
+    document.getElementById('formStatus').classList.add('show');
+    this.querySelector('button[type="submit"]').disabled = true;
+    this.querySelector('button[type="submit"]').textContent = 'Request sent ✓';
+  });
+</script>
+</body>
+</html>
