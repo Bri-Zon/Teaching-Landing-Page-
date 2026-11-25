@@ -76,10 +76,6 @@
     max-width:600px;
   }
   .hero h1{font-size:clamp(2.4rem,5.2vw,3.9rem);font-weight:800;letter-spacing:-.02em;margin-bottom:22px;}
-  .hl{position:relative;display:inline-block;white-space:nowrap;}
-  .hl svg{position:absolute;left:-4%;bottom:-.14em;width:108%;height:.42em;z-index:-1;overflow:visible;}
-  .hl path{fill:var(--honey-soft);}
-  .hl.h2b path{fill:var(--sage-deep);}
   .hero p.sub{font-size:1.15rem;color:var(--ink-soft);max-width:32em;margin-bottom:34px;}
   .hero-facts{display:flex;gap:28px;margin-top:38px;flex-wrap:wrap;}
   .fact strong{font-family:'Bricolage Grotesque',sans-serif;font-size:1.5rem;font-weight:800;display:block;}
@@ -104,13 +100,12 @@
   .b3{top:196px;left:30px;transform:rotate(-1.2deg);}
   .b4{top:288px;right:0;transform:rotate(1.6deg);}
   @media(max-width:860px){
-    .bubble{width:90%;margin:0 auto;}
-    .bubble{max-width:230px;padding:11px 15px;}
-    .b1{left:0;} .b2{right:0;} .b3{left:6px;} .b4{right:4px;top:auto;bottom:0;}
+    .bubble-stage{min-height:0;display:flex;flex-wrap:wrap;gap:14px;justify-content:center;}
+    .bubble{position:static;width:auto;max-width:280px;flex:1 1 240px;padding:11px 15px;}
+    .b1{transform:rotate(-1deg);} .b2{transform:rotate(1deg);} .b3{transform:rotate(-.6deg);} .b4{transform:rotate(.8deg);}
   }
   @media(max-width:480px){
-    .bubble{max-width:200px;font-size:.85rem;}
-    .b3{top:190px;}
+    .bubble{font-size:.85rem;}
   }
 
   section{padding:84px 0;}
@@ -328,7 +323,7 @@
     <div class="teachers-grid">
       <div class="teacher-card">
         <div class="photo-wrap" style="border-radius: var(--radius);">
-          <img src="Emmanuel.jpg.jpeg" alt="Emmanuel">
+          <img src="emmanuel1.jpeg" alt="Emmanuel">
         </div>
         <div>
           <h2>Emmanuel</h2>
@@ -339,7 +334,7 @@
       </div>
       <div class="teacher-card">
         <div class="photo-wrap" style="border-radius: var(--radius);">
-          <img src="TeacherPamela.jpg.jpeg" alt="Pamela">
+          <img src="pamela.jpeg" alt="Pamela">
         </div>
         <div>
           <h2>Pamela</h2>
@@ -360,19 +355,19 @@
     </div>
     <div class="quote-grid">
       <div class="quote">
-        <div class="photo-wrap"><img src="Gustavo.jpg.jpeg" alt="Gustavo Dias"></div>
+        <div class="photo-wrap"><img src="gustavo.jpeg" alt="Gustavo Dias"></div>
         <div class="quote-head"><div class="mark" aria-hidden="true">“</div></div>
         <blockquote>"He is an excellent professional; he is greatly helping my English language development. He also has a great sense of humor. I highly recommend his work."</blockquote>
         <cite>Gustavo Dias<sup>Data Engineer, Brazil</sup></cite>
       </div>
       <div class="quote">
-        <div class="photo-wrap"><img src="Yarlei.jpg.jpeg" alt="Yarlei Cruz"></div>
+        <div class="photo-wrap"><img src="yarlei.jpeg" alt="Yarlei Cruz"></div>
         <div class="quote-head"><div class="mark" aria-hidden="true">“</div></div>
         <blockquote>"I wanted to feel more confident in job interviews and in conversations with international colleagues and friends. Since starting classes with Emmanuel, I have done around 20 to 30 interviews and often received compliments on my English from international interviewers. His classes encourage me to speak, develop my ideas, and communicate more naturally, which has greatly improved my confidence. I highly recommend him to anyone who wants to improve their speaking skills."</blockquote>
         <cite>Yarlei Cruz<sup>QA Automation, Brazil</sup></cite>
       </div>
       <div class="quote">
-        <div class="photo-wrap"><img src="Andy.jpg.jpeg" alt="Anderson Euripedes da Silva"></div>
+        <div class="photo-wrap"><img src="andy.jpeg" alt="Anderson Euripedes da Silva"></div>
         <div class="quote-head"><div class="mark" aria-hidden="true">“</div></div>
         <blockquote>"I have had the pleasure of knowing Emmanuel as a committed and passionate teacher. He demonstrates patience, professionalism, and a genuine dedication to his students' development. His teaching approach is engaging, respectful, and focused on creating a positive learning environment. Emmanuel has the ability to connect with students, adapt his methods to their needs, and inspire confidence throughout the learning process. I highly recommend him as a teacher and educator."</blockquote>
         <cite>Anderson Euripedes da Silva<sup>Psychotherapist and fellow teacher, Brazil</sup></cite>
