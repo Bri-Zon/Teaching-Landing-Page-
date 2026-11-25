@@ -386,33 +386,51 @@
     <div class="cta-card">
       <h2>Ready to start?</h2>
       <p>Tell us your goals and we will build a plan that works for you.</p>
-      <form id="introForm" novalidate>
+      <form id="contactForm" action="https://docs.google.com/forms/d/e/1FAIpQLSfStxClpkb4FE4HstTd8WYalyH7FCPhIju7yUiPdHRQpQxMvw/formResponse" method="POST" target="hidden_iframe">
         <div class="field">
-          <label for="name">Your name</label>
-          <input type="text" id="name" name="name" required placeholder="e.g. Maria Santos">
+          <label for="fullname">Full name</label>
+          <input type="text" id="fullname" name="entry.495465958" required placeholder="e.g. Maria Santos">
         </div>
         <div class="field">
-          <label for="email">Email or WhatsApp number</label>
-          <input type="text" id="email" name="contact" required placeholder="e.g. maria@email.com or +1 555 000 1234">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="entry.147131557" required placeholder="e.g. maria@email.com">
         </div>
         <div class="field">
-          <label for="goal">What do you need English for?</label>
-          <select id="goal" name="goal">
-            <option>Work & business</option>
-            <option>Travel</option>
-            <option>Fluency exam preparation</option>
-            <option>General improvement</option>
-            <option>Not sure yet</option>
+          <label for="whatsapp">WhatsApp number <span style="font-weight:500;color:var(--ink-soft);">(optional)</span></label>
+          <input type="text" id="whatsapp" name="entry.1144861861" placeholder="with country code, e.g. +55 11 91234 5678">
+        </div>
+        <div class="field">
+          <label for="level">Your English level</label>
+          <select id="level" name="entry.46355708">
+            <option value="">Select…</option>
+            <option value="Beginner">Beginner</option>
+            <option value="Intermediate">Intermediate</option>
+            <option value="Advanced">Advanced</option>
+            <option value="Not sure">Not sure</option>
           </select>
         </div>
         <div class="field">
-          <label for="msg">Tell us a little about your goals <span style="font-weight:500;color:var(--ink-soft);">(optional)</span></label>
-          <textarea id="msg" name="message" placeholder="e.g. I'm an engineer and I present to international clients twice a month…"></textarea>
+          <label for="reason">Why do you want to learn English?</label>
+          <select id="reason" name="entry.7518307">
+            <option value="">Select…</option>
+            <option value="Work">Work</option>
+            <option value="Travel">Travel</option>
+            <option value="Exam preparation">Exam preparation</option>
+            <option value="Other">Other</option>
+          </select>
         </div>
-        <button type="submit" class="btn btn-primary">Book a Free Intro Call</button>
-        <p class="form-status" id="formStatus" role="status">Thanks! Your note is ready to send — we'll be in touch soon.</p>
-        <p class="form-note">Note for the site owner: this demo form doesn't send yet. Connect it to a free service like Formspree, Netlify Forms, or Google Forms to receive messages.</p>
+        <div class="field">
+          <label for="timezone">Your time zone and preferred class times <span style="font-weight:500;color:var(--ink-soft);">(optional)</span></label>
+          <input type="text" id="timezone" name="entry.1809476350" placeholder="e.g. GMT-3, weekday evenings after 6pm">
+        </div>
+        <div class="field">
+          <label for="message">Message</label>
+          <textarea id="message" name="entry.1824103198" required placeholder="e.g. I'm an engineer and I present to international clients twice a month…"></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Send message</button>
+        <p class="form-status" id="formStatus" role="status">Thank you! Your message is on its way — we will reply soon.</p>
       </form>
+      <iframe name="hidden_iframe" style="display:none" title="hidden"></iframe>
     </div>
   </div>
 </section>
@@ -425,17 +443,14 @@
 </footer>
 
 <script>
-  document.getElementById('introForm').addEventListener('submit', function(e){
-    e.preventDefault();
-    var name = document.getElementById('name');
-    var contact = document.getElementById('email');
-    if(!name.value.trim() || !contact.value.trim()){
-      (name.value.trim() ? contact : name).focus();
-      return;
-    }
-    document.getElementById('formStatus').classList.add('show');
-    this.querySelector('button[type="submit"]').disabled = true;
-    this.querySelector('button[type="submit"]').textContent = 'Request sent ✓';
+  document.getElementById('contactForm').addEventListener('submit', function(){
+    var button = this.querySelector('button[type="submit"]');
+    button.disabled = true;
+    button.textContent = 'Sending…';
+    setTimeout(function(){
+      document.getElementById('formStatus').classList.add('show');
+      button.textContent = 'Message sent ✓';
+    }, 500);
   });
 </script>
 </body>
