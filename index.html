@@ -156,8 +156,13 @@
     display:flex;flex-direction:column;gap:20px;
   }
   .teacher-card .photo-wrap{
-    width:100%;aspect-ratio:4/4.6;border-radius:var(--radius);overflow:hidden;
-    background:var(--sage);display:flex;align-items:center;justify-content:center;
+    width:calc(100% + 72px);
+    margin:-36px -36px 24px;
+    aspect-ratio:1/1;
+    border-radius:var(--radius) var(--radius) 0 0;
+    overflow:hidden;
+    background:var(--sage);
+    display:flex;align-items:center;justify-content:center;
   }
   .teacher-card .photo-wrap img{width:100%;height:100%;object-fit:cover;display:block;}
   .teacher-card h2{font-size:clamp(1.7rem,3.4vw,2.3rem);font-weight:800;margin-bottom:8px;}
@@ -176,7 +181,7 @@
     display:flex;flex-direction:column;gap:16px;
   }
   .photo-wrap{
-    width:52px;height:52px;border-radius:50%;
+    width:56px;height:56px;border-radius:14px;
     border:2px solid var(--sage-deep);
     flex-shrink:0;background:var(--sage);
     display:flex;align-items:center;justify-content:center;
@@ -322,7 +327,7 @@
     </div>
     <div class="teachers-grid">
       <div class="teacher-card">
-        <div class="photo-wrap" style="border-radius: var(--radius);">
+        <div class="photo-wrap">
           <img src="emmanuel1.jpeg" alt="Emmanuel">
         </div>
         <div>
@@ -333,7 +338,7 @@
         </div>
       </div>
       <div class="teacher-card">
-        <div class="photo-wrap" style="border-radius: var(--radius);">
+        <div class="photo-wrap">
           <img src="pamela.jpeg" alt="Pamela">
         </div>
         <div>
