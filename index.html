@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Business English, Tailored to You</title>
+<title>Business English, tailored specifically for you.</title>
 <meta name="description" content="One-on-one Business English classes that fit your goals and your schedule, from beginner to advanced.">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Language Learning Habits">
@@ -240,6 +240,30 @@
   .foot{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;max-width:1060px;margin:0 auto;padding:0 24px;}
   .foot .brand{color:var(--white);}
   .foot small{font-size:.85rem;}
+.social-footer {
+  text-align: center;
+  padding: 32px 16px;
+  background: #f4f6f8;
+  margin-top: 40px;
+}
+.social-links {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  margin: 16px 0;
+  flex-wrap: wrap;
+}
+.social-links a {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: #222;
+  text-decoration: none;
+  font-weight: 600;
+}
+.social-links a:hover {
+  color: #0a7cff;
+}
 </style>
 </head>
 <body>
@@ -470,5 +494,27 @@
     }, 500);
   });
 </script>
+<footer class="social-footer">
+  <p>Connect with us</p>
+
+  <div class="social-links">
+    <a href="https://wa.me/639694399142?text=Hi%2C%20I%20am%20interested%20in%20Business%20English%20classes"
+       target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+        <path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.2 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.3-.7-2.8-1.2-4.6-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.8s.7-2 .9-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.3 0 .5l-.3.5-.4.4c-.1.1-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.1 1 2.1 1.300 2.400 1.500.3.1.5.1.6-.1l.9-1.100c.2-.3.4-.2.6-.1l1.900.9c.3.1.5.2.5.3.1.100.1.600-.1 1.100z"/>
+      </svg>
+      <span>WhatsApp</span>
+    </a>
+
+    <a href="https://x.com/llearninghabits" target="_blank" rel="noopener" aria-label="Follow on X (Twitter)">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+        <path d="M18.2 2h3.4l-7.4 8.5L23 22h-6.800l-5.300-7-6.100 7H1.400l7.900-9.100L1 2h7l4.800 6.400L18.200 2zm-1.200 18h1.900L7 3.900H5L17 20z"/>
+      </svg>
+      <span>Twitter / X</span>
+    </a>
+  </div>
+
+  <small>&copy; 2026 Your Business Name</small>
+</footer>
 </body>
 </html>
