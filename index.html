@@ -23,13 +23,13 @@
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700;12..96,800&family=Figtree:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet">
 <style>
   :root{
-    --paper:#FFFCF6;
-    --ink:#1F3D33;
-    --ink-soft:#3E5A50;
-    --sage:#E7EEE4;
-    --sage-deep:#D3E0CE;
-    --honey:#F0A63C;
-    --honey-soft:#FBDFB6;
+    --paper:#F5EEE2;
+    --ink:#1E4B35;
+    --ink-soft:#4A6B57;
+    --sage:#F0E8D8;
+    --sage-deep:#E2D7C0;
+    --honey:#7C3AED;
+    --honey-soft:#E9DEFA;
     --white:#FFFFFF;
     --radius:18px;
   }
@@ -54,9 +54,9 @@
 
   .nav{
     position:sticky;top:0;z-index:50;
-    background:rgba(255,252,246,.92);
+    background:rgba(245,238,226,.92);
     backdrop-filter:blur(8px);
-    border-bottom:1px solid rgba(31,61,51,.08);
+    border-bottom:1px solid rgba(30,75,53,.09);
   }
   .nav-inner{display:flex;align-items:center;justify-content:space-between;padding:14px 24px;max-width:1060px;margin:0 auto;}
   .brand{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:1.15rem;text-decoration:none;display:flex;align-items:center;gap:8px;}
@@ -79,9 +79,9 @@
     transition:transform .18s ease, box-shadow .18s ease, background .18s ease;
   }
   .btn-primary{background:var(--ink);color:var(--white);}
-  .btn-primary:hover{background:#2A4F42;transform:translateY(-2px);box-shadow:0 8px 20px rgba(31,61,51,.22);}
-  .btn-honey{background:var(--honey);color:var(--ink);}
-  .btn-honey:hover{background:#EFA13A;transform:translateY(-2px);box-shadow:0 8px 20px rgba(240,166,60,.35);}
+  .btn-primary:hover{background:#2A5C42;transform:translateY(-2px);box-shadow:0 8px 20px rgba(30,75,53,.25);}
+  .btn-honey{background:var(--honey);color:var(--white);}
+  .btn-honey:hover{background:#6D2EE0;transform:translateY(-2px);box-shadow:0 8px 20px rgba(124,58,237,.35);}
 
   .hero{padding:76px 0 90px;position:relative;overflow:hidden;}
   .hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:48px;align-items:center;}
@@ -102,10 +102,10 @@
   .bubble{
     position:absolute;
     background:var(--white);
-    border:1.5px solid rgba(31,61,51,.1);
+    border:1.5px solid rgba(30,75,53,.11);
     border-radius:16px;
     padding:14px 18px;
-    box-shadow:0 10px 24px rgba(31,61,51,.08);
+    box-shadow:0 10px 24px rgba(30,75,53,.09);
     font-size:.92rem;
     max-width:250px;
   }
@@ -138,7 +138,7 @@
   .who ul{list-style:none;}
   .who li{
     padding:12px 0 12px 34px;position:relative;
-    border-bottom:1px solid rgba(31,61,51,.1);
+    border-bottom:1px solid rgba(30,75,53,.11);
     font-weight:500;font-size:.98rem;
   }
   .who li:last-child{border-bottom:none;}
@@ -151,7 +151,7 @@
   }
 
   .sched{background:var(--ink);color:var(--white);}
-  .sched .sec-head p{color:#C8D6CF;}
+  .sched .sec-head p{color:#D8D2BF;}
   .sched-inner{display:grid;grid-template-columns:auto 1fr;gap:48px;align-items:center;max-width:38em;margin:0 auto;}
   @media(max-width:680px){.sched-inner{grid-template-columns:1fr;gap:28px;text-align:left;}}
   .sched-icon{
@@ -160,7 +160,7 @@
     display:flex;align-items:center;justify-content:center;
   }
   .sched-icon svg{width:44px;height:44px;stroke:var(--ink);}
-  .sched-inner p{font-size:1.14rem;color:#E4EDE8;}
+  .sched-inner p{font-size:1.14rem;color:#F0EAD9;}
   .sched-inner p strong{color:var(--white);}
 
   .teachers-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:40px;}
@@ -169,7 +169,7 @@
     background:var(--white);
     border-radius:var(--radius);
     padding:36px;
-    box-shadow:0 6px 18px rgba(31,61,51,.06);
+    box-shadow:0 6px 18px rgba(30,75,53,.07);
     display:flex;flex-direction:column;gap:20px;
   }
   .teacher-card .photo-wrap{
@@ -194,7 +194,7 @@
     background:var(--white);
     border-radius:var(--radius);
     padding:28px 26px;
-    box-shadow:0 6px 18px rgba(31,61,51,.06);
+    box-shadow:0 6px 18px rgba(30,75,53,.07);
     display:flex;flex-direction:column;gap:16px;
   }
   .quote .photo-wrap{
@@ -213,11 +213,11 @@
   .cta-sec{padding-bottom:96px;}
   .cta-card{
     background:var(--white);
-    border:1.5px solid rgba(31,61,51,.1);
+    border:1.5px solid rgba(30,75,53,.11);
     border-radius:26px;
     padding:56px 52px;
     max-width:760px;margin:0 auto;
-    box-shadow:0 14px 40px rgba(31,61,51,.08);
+    box-shadow:0 14px 40px rgba(30,75,53,.09);
   }
   .cta-card h2{font-size:clamp(1.7rem,3.4vw,2.3rem);font-weight:800;margin-bottom:12px;text-align:center;}
   .cta-card>p{color:var(--ink-soft);text-align:center;max-width:30em;margin:0 auto 32px;}
